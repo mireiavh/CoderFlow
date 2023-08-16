@@ -1,14 +1,14 @@
 {
-    "name": "user/coder-flow",
+    "name": "lili/coder-flow",
     "autoload": {
         "psr-4": {
-            "User\\CoderFlow\\": "src/"
+            "Lili\\CoderFlow\\": "src/"
         }
     },
     "authors": [
         {
-            "name": "natalia.belzarova",
-            "email": "natalia.belzarova@gmail.com"
+            "name": "LilinaG",
+            "email": "lgutierrezfer@gmail.com"
         }
     ],
     "require": {}
