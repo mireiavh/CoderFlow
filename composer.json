@@ -1,0 +1,15 @@
+{
+    "name": "user/coder-flow",
+    "autoload": {
+        "psr-4": {
+            "User\\CoderFlow\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "natalia.belzarova",
+            "email": "natalia.belzarova@gmail.com"
+        }
+    ],
+    "require": {}
+}
