@@ -1,15 +1,19 @@
 {
-    "name": "lili/coder-flow",
-    "autoload": {
-        "psr-4": {
-            "Lili\\CoderFlow\\": "src/"
-        }
-    },
-    "authors": [
-        {
-            "name": "LilinaG",
-            "email": "lgutierrezfer@gmail.com"
-        }
-    ],
-    "require": {}
+  "name": "lili/coder-flow",
+  "autoload": {
+    "psr-4": {
+      "Database\\": "database/",
+      "App\\": "app/",
+      "Router\\": "router/"
+    }
+  },
+  "authors": [
+    {
+      "name": "LilinaG",
+      "email": "lgutierrezfer@gmail.com"
+    }
+  ],
+  "require-dev": {
+    "phpunit/phpunit": "^10.3"
+  }
 }
