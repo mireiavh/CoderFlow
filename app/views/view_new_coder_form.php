@@ -48,19 +48,25 @@
             <form action="" method="POST">
                 
                 <section>
-                    <label for="id_coder">ID coder</label>
+                    <label for="id_coder" class="name_label">ID coder</label>
                     <input type="text" name="id_coder" value="" class="input_form" required>
 
-                    <label for="age">Edad</label>
-                    <input type="text" name="age" value="" class="input_form" required><br><br>
+                    <label class="name_label">Edad</label>
+                    <select name="gender" class="input_form" required>
+                        <option value="0"></option>
+                        <option value="1">18-29</option>
+                        <option value="2">30-45</option>
+                        <option value="3">46-65</option>
+                        <option value="4">+65</option>
+                    </select><br><br>
 
-                    <label for="name">Nombre</label>
+                    <label for="name" class="name_label">Nombre</label>
                     <input type="text" name="name" value="" class="input_form" required><br><br>
 
-                    <label for="last_name">Apellidos</label>
+                    <label for="last_name" class="name_label">Apellidos</label>
                     <input type="text" name="last_name" value="" class="input_form" required><br><br>
 
-                    <label>Género</label>
+                    <label class="name_label">Género</label>
                     <select name="gender" class="input_form" required>
                         <option value="0"></option>
                         <option value="1">Mujer</option>
@@ -68,7 +74,7 @@
                         <option value="3">Otros</option>
                     </select><br><br>
 
-                    <label>Discapacidad</label>
+                    <label class="name_label">Discapacidad</label>
                     <select name="disability" class="input_form" required>
                         <option value="0"></option>
                         <option value="1">Sí</option>
@@ -76,29 +82,29 @@
                         <option value="3">Pendiente</option>
                     </select><br><br>
 
-                    <label for="documents">Documentos</label>
+                    <label for="documents" class="name_label">Documentos</label>
                     <input type="text" name="documents" value="" class="input_form" required><br><br>
 
                 </section>
 
                 <section>
 
-                    <label for="dni_nief">DNI/NIEF</label>
+                    <label for="dni_nief" class="name_label">DNI/NIEF</label>
                     <input type="text" name="dni_nief" value="" class="input_form" required><br><br>
 
-                    <label for="email">eMail</label>
+                    <label for="email" class="name_label">eMail</label>
                     <input type="text" name="email" value="" class="input_form" required><br><br>
 
-                    <label for="city">Localidad</label>
+                    <label for="city" class="name_label">Localidad</label>
                     <input type="text" name="city" value="" class="input_form" required><br><br>
 
-                    <label for="region">Region</label>
+                    <label for="region" class="name_label">Region</label>
                     <input type="text" name="region" value="" class="input_form" required><br><br>
 
-                    <label for="number_phone">Teléfono</label>
+                    <label for="number_phone" class="name_label">Teléfono</label>
                     <input type="text" name="number_phone" value="" class="input_form" required><br><br>
 
-                    <label for="status">Estado</label>
+                    <label for="status" class="name_label">Estado</label>
                     <input type="text" name="status" value="" class="input_form" required><br><br>        
                 
                 </section>

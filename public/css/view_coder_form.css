@@ -76,15 +76,33 @@ nav h1 {
 
 .input_form {
     background-color: white;
-    height: 25px;
+    height: 30px;
     width: 300px;
 
+    border-radius: 15px;
+    border-style: solid;
     border-color: #A8F3D8;
+
+    color: #FF5819;
+    font-weight: bold;
+    font-size: medium;
 
 }
 
-.photo_container {
+.name_label {
     
+}
+
+.logo_container {
+    padding-left: 30px;
+    padding-top: 10px;
+}
+
+.photo_container {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 
 .img_coder {
