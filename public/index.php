@@ -15,6 +15,10 @@ $id = $slug[1] ?? null;
 $router = new RouterHandler;
 
 switch($resource){
+
+    case '/':
+        echo "Home";
+        break;
     
     case "coders":        
         $method = $_POST["method"] ?? "get";

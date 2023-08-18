@@ -1,8 +1,6 @@
 <?php
-
 //include_once('../../database/Database_connection.php');
 //include_once('../Controllers/Personas_controller.php');
-
 ?>
 
 <!DOCTYPE html>
@@ -41,23 +39,23 @@
 
     <br><br>
 
-    <form action="" method="POST">
+    <form action="/coderflow/public/coders" method="POST">
         
     <section>
         <label for="id_coder">ID coder</label>
         <input type="text" name="id_coder" value="" required>
 
         <label for="age">Edad</label>
-        <input type="text" name="age" value="" required><br><br>
+        <input type="text" name="edad" value="" required><br><br>
 
         <label for="name">Nombre</label>
-        <input type="text" name="name" value="" required><br><br>
+        <input type="text" name="nombre" value="" required><br><br>
 
         <label for="last_name">Apellidos</label>
-        <input type="text" name="last_name" value="" required><br><br>
+        <input type="text" name="apellidos" value="" required><br><br>
 
         <label>Género</label>
-        <select name="gender" required>
+        <select name="genero" required>
             <option value="0"></option>
             <option value="1">Mujer</option>
             <option value="2">Hombre</option>
@@ -65,7 +63,7 @@
         </select><br><br>
 
         <label>Discapacidad</label>
-        <select name="disability" required>
+        <select name="certificado_discapacidad" required>
             <option value="0"></option>
             <option value="1">Sí</option>
             <option value="2">No</option>
@@ -79,23 +77,23 @@
 
         <section>
 
-        <label for="dni_nief">DNI/NIEF</label>
-        <input type="text" name="dni_nief" value="" required><br><br>
+        <label for="dni_nief">DNI/NIE</label>
+        <input type="text" name="DNI" value="" required><br><br>
 
         <label for="email">eMail</label>
         <input type="text" name="email" value="" required><br><br>
 
         <label for="city">Localidad</label>
-        <input type="text" name="city" value="" required><br><br>
+        <input type="text" name="localidad" value="" required><br><br>
 
         <label for="region">Region</label>
-        <input type="text" name="region" value="" required><br><br>
+        <input type="text" name="provincia" value="" required><br><br>
 
         <label for="number_phone">Teléfono</label>
-        <input type="text" name="number_phone" value="" required><br><br>
+        <input type="text" name="telefono" value="" required><br><br>
 
         <label for="status">Estado</label>
-        <input type="text" name="status" value="" required><br><br>        
+        <input type="text" name="estado" value="" required><br><br>        
        
         </section>
     </form>

@@ -35,10 +35,10 @@
     <br><br>
 
      <!--botón-->
-    <a href = "/proyectos/coderflow/public/coders"><button>Volver</button></a>
+    <a href = "/coderflow/public/coders"><button>Volver</button></a>
     <br><br>
 
-    <form action="/proyectos/coderflow/public/coders" method="POST">
+    <form action="/coderflow/public/coders/form" method="POST">
        <input type="hidden" name="method" value="post"> <!--anade key "method" con valor "post" para el router-->
         
         <?php if ($coder && !$edit):?>

@@ -6,6 +6,7 @@
     <title>Lista de Coders</title>
 </head>
 <body>
+    <a href="/coderflow/public/coders"><button>Crear coder</button></a>
     <h2>Lista de Coders</h2>
         <ul>
             <?php foreach($results as $result): ?>
@@ -21,4 +22,5 @@
             
 
 </body>
+</html>
 </html>
