@@ -14,7 +14,7 @@ class Person_controller{
     public function __construct()
     {
         // Definir datos de conexión
-        $this -> server = "localhost";
+        $this -> server = "127.0.0.1";
         $this -> username = "root";
         $this -> password = "";
         $this -> database = "coder_flow";
