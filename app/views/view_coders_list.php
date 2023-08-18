@@ -1,11 +1,3 @@
-<?php
-use App\Controllers\Person_controller;
-require "../../vendor/autoload.php";
-
-$contr = new Person_controller;
-$results = $contr -> index();
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>

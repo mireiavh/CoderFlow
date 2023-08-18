@@ -32,10 +32,7 @@ class Person_controller{
 
         $stm -> execute();
         $results = $stm-> fetchAll(\PDO::FETCH_ASSOC);
-        return $results;
-
-
-        //require("../app/views/view_coders_list.php");
+        require("../app/views/view_coders_list.php");
     }
 
 }
