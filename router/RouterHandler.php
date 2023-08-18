@@ -18,7 +18,7 @@ class RouterHandler{
         
         switch($this -> method){
             case "get":
-                if($id && $id == "create")
+                if($id && $id == "form")
                     $resource -> create();
                 else if($id)
                     $resource -> show($id);

@@ -14,7 +14,7 @@ class Person_controller{
     public function __construct()
     {
         // Definir datos de conexión
-        $this -> server = "127.0.0.1";
+        $this -> server = "localhost";
         $this -> username = "root";
         $this -> password = "";
         $this -> database = "coder_flow";
@@ -25,23 +25,20 @@ class Person_controller{
     }
 
     public function index(){
-
-        $query = "SELECT * FROM persona";
-
-        $stm = $this->connection -> get_connection()->prepare($query);
-
-        $stm -> execute();
-        $results = $stm-> fetchAll(\PDO::FETCH_ASSOC);
-        require(__DIR__ .'../app/views/view_coders_list.php');
+        $results = $this -> get_personas();
+        require('../app/views/view_coders_list.php');
     }
 
     public function create(){
-        require("../app/views/view_create_coder.php"); 
+        $edit = true;
+       // $coder['edad'] = 23;
+        $coder = null;
+        require("../app/views/view_create_coder.php");  
     }
 
     public function store($data){
         $query = "INSERT
-                  INTO person (edad, nombre, apellidos, genero, certificado_discapacidad, 
+                  INTO persona (edad, nombre, apellidos, genero, certificado_discapacidad, 
                                 DNI, email, localidad, provincia, telefono, estado)
                     VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         $stm = $this->connection -> get_connection()->prepare($query);
@@ -57,18 +54,27 @@ class Person_controller{
                                 $data['telefono'],
                                 $data['estado']
                                 ]);
-            header("Location:/coderflow/public/coders/");
+        header("Location:coders");
         try{
             if(!empty($results)) {
                 $statusCode = 200;
                 $response = "Registro realizado exitosamente";
-                //echo $response;
+                echo $response;
                 return $response;
                 //return[$statusCode, $response, $results];
             }
         }catch (Exception $e) {
             return("Error al registrar");//posibilidad de echo
         }  
+    }
+    
+    public function get_personas() {
+        $query = "SELECT * FROM persona";
+
+        $stm = $this->connection -> get_connection()->prepare($query);
+
+        $stm -> execute();
+        return $stm-> fetchAll(\PDO::FETCH_ASSOC);
     }
 
 

@@ -35,26 +35,31 @@
     <br><br>
 
      <!--botón-->
-    <input type="submit" value="Volver">
+    <a href = "/proyectos/coderflow/public/coders"><button>Volver</button></a>
     <br><br>
 
-    <form action="/coderflow/public/coders" method="POST">
-       <input type="hidden" name="method" value="post">
-        <input type="submit" value="Guardar">
+    <form action="/proyectos/coderflow/public/coders" method="POST">
+       <input type="hidden" name="method" value="post"> <!--anade key "method" con valor "post" para el router-->
         
+        <?php if ($coder && !$edit):?>
+            <button type="submit">Modificar</button>
+            <button type="submit">Eliminar</button>
+        <?php else: ?>
+            <button type="submit">Guardar</button>
+        <?php endif; ?>
+        <br><br>
         <section>
-
             <label for="age">Edad</label>
-            <input type="text" name="edad" value="" required><br><br>
+            <input <?=$edit? '' : 'disabled'?> type="text" name="edad" value=<?= $coder? $coder['edad']:""?>><br><br>
 
             <label for="name">Nombre</label>
-            <input type="text" name="nombre" value="" required><br><br>
+            <input <?=$edit? '' : 'disabled'?> type="text" name="nombre" value=""><br><br>
 
             <label for="last_name">Apellidos</label>
-            <input type="text" name="apellidos" value="" required><br><br>
+            <input <?=$edit? '' : 'disabled'?> type="text" name="apellidos" value=""><br><br>
 
             <label>Género</label>
-            <select name="genero" required>
+            <select name="genero">
                 <option value="0"></option>
                 <option value="1">Mujer</option>
                 <option value="2">Hombre</option>
@@ -62,7 +67,7 @@
             </select><br><br>
 
             <label>Discapacidad</label>
-            <select name="certificado_discapacidad" required>
+            <select name="certificado_discapacidad">
                 <option value="0"></option>
                 <option value="1">Sí</option>
                 <option value="2">No</option>
@@ -83,13 +88,13 @@
         <input type="text" name="email" value="" ><br><br>
 
         <label for="city">Localidad</label>
-        <input type="text" name="localidad" value="" required><br><br>
+        <input type="text" name="localidad" value=""><br><br>
 
         <label for="region">Provincia</label>
-        <input type="text" name="provincia" value="" required><br><br>
+        <input type="text" name="provincia" value=""><br><br>
 
         <label for="number_phone">Teléfono</label>
-        <input type="text" name="telefono" value="" required><br><br>
+        <input type="text" name="telefono" value=""><br><br>
 
         <label for="status">Estado</label>
         <input type="text" name="estado" value=""><br><br>        
