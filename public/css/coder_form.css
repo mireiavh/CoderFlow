@@ -1,5 +1,6 @@
 *{
     margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 header, body {
@@ -45,39 +46,41 @@ nav h1 {
     background-color: white;
     padding: 30px;
     padding-bottom: 47.4px;
+
+    border-radius: 100px 0 0 0;
 }
 
 
 .btn_1 {
     background-color: #75E1B1;
-    height: 30px;
-    width: 85px;
-
-    border-radius: 15px;
-    border-style: none;
-
-    color: white;
-    font-weight: bold;
-    font-size: medium;
-}
-
-.btn_2 {
-    background-color: #FF5819;
-    height: 30px;
+    height: 40px;
     width: 100px;
 
     border-radius: 15px;
     border-style: none;
 
     color: white;
-    font-weight: bold;
-    font-size: medium;
+    font-size: x-large;
+}
+
+.btn_2 {
+    background-color: #FF5819;
+    height: 40px;
+    width: 150px;
+
+    border-radius: 15px;
+    border-style: none;
+
+    color: white;
+    font-size: x-large;
 }
 
 .input_form {
     background-color: white;
-    height: 30px;
-    width: 300px;
+    height: 35px;
+    width: 400px;
+    margin-left: 70px;
+    padding-inline-start: 15px;
 
     border-radius: 15px;
     border-style: solid;
@@ -85,16 +88,18 @@ nav h1 {
 
     color: #FF5819;
     font-weight: bold;
-    font-size: medium;
+    font-size: larger;
 
 }
 
 .name_label {
-    
+    color: #59C192;
+    font-weight: 600;
+    font-size: xx-large;
 }
 
 .logo_container {
-    padding-left: 30px;
+    padding-left: 50px;
     padding-top: 10px;
 }
 
@@ -108,4 +113,48 @@ nav h1 {
 .img_coder {
     height: auto;
     width: 250px;
+}
+
+form {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+label {
+    padding: 10px;
+}
+
+.short_form {
+    background-color: white;
+    height: 35px;
+    width: 80px;
+    margin-left: 70px;
+    padding-inline-start: 10px;
+
+    border-radius: 15px;
+    border-style: solid;
+    border-color: #A8F3D8;
+
+    color: #FF5819;
+    font-weight: bold;
+    font-size: medium;
+}
+
+.group_container {
+    display: flex;
+    flex-direction: row;
+
+}
+
+.input_container_2 {
+    padding-left: 150px;
+}
+
+.btn_container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+    margin: 10px;
 }
