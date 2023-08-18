@@ -24,4 +24,15 @@ class Person_controller{
         $this-> connection -> connect();
     }
 
+    public function index(){
+
+        $query = "SELECT * FROM persona";
+
+        $stm = $this->connection -> get_connection()->prepare($query);
+
+        $stm -> execute();
+        $results = $stm-> fetchAll(\PDO::FETCH_ASSOC);
+        require("../app/views/view_coders_list.php");
+    }
+
 }
