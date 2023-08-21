@@ -38,40 +38,60 @@
     <a href = "/proyectos/coderflow/public/coders"><button>Volver</button></a>
     <br><br>
 
-    <form action="/proyectos/coderflow/public/coders" method="POST">
-       <input type="hidden" name="method" value="post"> <!--anade key "method" con valor "post" para el router-->
+    
         
         <?php if ($coder && !$edit):?>
-            <button type="submit">Modificar</button>
-            <button type="submit">Eliminar</button>
-        <?php else: ?>
+            
+            
+            <form action="/proyectos/coderflow/public/coders/<?=$coder['identificador']?>" method="post">
+                <input type="hidden" name="method" value="edit">
+           
+                <button type="submit">Modificar</button>
+           </form>
+            
+            <form action="/proyectos/coderflow/public/coders/<?=$coder['identificador']?>" method="post">
+                    <input type="hidden" name="method" value="delete">
+                    <button type="submit">Eliminar</button>
+            </form>
+        <?php endif; ?>
+
+        <form action="/proyectos/coderflow/public/coders<?= $coder? '/'.$coder['identificador']:'' ?>" method="POST">
+            <input type="hidden" name="method" value="post"> 
+
+         
+        <?php if($coder && $edit):?>
+            <button type="submit">Guardar cambios</button>
+        <?php elseif($edit): ?>
+             <?= $coder? '/'.$coder['identificador']:'' ?>
             <button type="submit">Guardar</button>
         <?php endif; ?>
+
+
         <br><br>
         <section>
             <label for="age">Edad</label>
             <input <?=$edit? '' : 'disabled'?> type="text" name="edad" value=<?= $coder? $coder['edad']:""?>><br><br>
 
             <label for="name">Nombre</label>
-            <input <?=$edit? '' : 'disabled'?> type="text" name="nombre" value=""><br><br>
+            <input <?=$edit? '' : 'disabled'?> type="text" name="nombre" value=<?= $coder? $coder['nombre']:""?>><br><br>
 
             <label for="last_name">Apellidos</label>
-            <input <?=$edit? '' : 'disabled'?> type="text" name="apellidos" value=""><br><br>
+            <input <?=$edit? '' : 'disabled'?> type="text" name="apellidos" value=<?= $coder? $coder['apellidos']:""?>><br><br>
 
             <label>Género</label>
-            <select name="genero">
-                <option value="0"></option>
-                <option value="1">Mujer</option>
-                <option value="2">Hombre</option>
-                <option value="3">Otros</option>
+            <select <?=$edit? '' : 'disabled'?> name="genero">
+                <option <?= $coder && $coder['genero']== 0? 'selected':''?>value="0"></option>
+                <option <?= $coder && $coder['genero']== 1? 'selected':''?>value="1">Mujer</option>
+                <option <?= $coder && $coder['genero']== 2? 'selected':''?>value="2">Hombre</option>
+                <option <?= $coder && $coder['genero']== 3? 'selected':''?>value="3">Otros</option>
             </select><br><br>
 
             <label>Discapacidad</label>
-            <select name="certificado_discapacidad">
-                <option value="0"></option>
-                <option value="1">Sí</option>
-                <option value="2">No</option>
-                <option value="3">Pendiente</option>
+            <select <?=$edit? '' : 'disabled'?> name="certificado_discapacidad">
+                <option <?= $coder && $coder['certificado_discapacidad']== 0? 'selected':''?> value="0"></option>
+                <option <?= $coder && $coder['certificado_discapacidad']== 1? 'selected':''?> value="1">Sí</option>
+                <option <?= $coder && $coder['certificado_discapacidad']== 2? 'selected':''?> value="2">No</option>
+                <option <?= $coder && $coder['certificado_discapacidad']== 3? 'selected':''?> value="3">Pendiente</option>
             </select><br><br>
 
             <label for="documents">Documentos</label>
@@ -82,22 +102,22 @@
         <section>
 
         <label for="dni_nie">DNI/NIE</label>
-        <input type="text" name="DNI" value=""><br><br>
+        <input <?=$edit? '' : 'disabled'?> type="text" name="DNI" value=""><br><br>
 
         <label for="email">eMail</label>
-        <input type="text" name="email" value="" ><br><br>
+        <input <?=$edit? '' : 'disabled'?> type="text" name="email" value=<?= $coder? $coder['email']:""?> ><br><br>
 
         <label for="city">Localidad</label>
-        <input type="text" name="localidad" value=""><br><br>
+        <input <?=$edit? '' : 'disabled'?> type="text" name="localidad" value=<?= $coder? $coder['localidad']:""?>><br><br>
 
         <label for="region">Provincia</label>
-        <input type="text" name="provincia" value=""><br><br>
+        <input <?=$edit? '' : 'disabled'?> type="text" name="provincia" value=<?= $coder? $coder['provincia']:""?>><br><br>
 
         <label for="number_phone">Teléfono</label>
-        <input type="text" name="telefono" value=""><br><br>
+        <input <?=$edit? '' : 'disabled'?> type="text" name="telefono" value=<?= $coder? $coder['telefono']:""?>><br><br>
 
         <label for="status">Estado</label>
-        <input type="text" name="estado" value=""><br><br>        
+        <input <?=$edit? '' : 'disabled'?> type="text" name="estado" value=<?= $coder? $coder['estado']:""?>><br><br>        
        
         </section>
     </form>

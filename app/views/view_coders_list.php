@@ -6,7 +6,7 @@
     <title>Lista de Coders</title>
 </head>
 <body>
-    <a href="/proyectos/coderflow/public/coders/form"><button>Crear coder</button></a>
+    <a href="/proyectos/coderflow/public/coders/create"><button>Crear coder</button></a>
     <h2>Lista de Coders</h2>
         <ul>
             <?php foreach($results as $result): ?>
@@ -15,7 +15,8 @@
                     <span><?= $result["apellidos"]?></span>
                     <span><?= $result["localidad"]?></span>
                     <span><?= $result["estado"]?></span>
-                    <button type=submit>Ver Coder</button>
+                    <a href="/proyectos/coderflow/public/coders/<?=$result["identificador"]?>"><button>Ver Coder</button></a>
+                    
                 </li>
             <?php endforeach;?>
         </ul>

@@ -20,7 +20,7 @@ switch($resource){
         echo "Home";
         break;
     
-    case "coders":        
+    case "coders":
         $method = $_POST["method"] ?? "get";
         $router -> set_method($method);
         $router -> set_data($_POST);

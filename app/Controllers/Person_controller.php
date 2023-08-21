@@ -77,5 +77,48 @@ class Person_controller{
         return $stm-> fetchAll(\PDO::FETCH_ASSOC);
     }
 
+    public function get_one_person($id) {
+        
+        $query = "SELECT * FROM persona WHERE identificador=:identificador";
+        $stm = $this->connection -> get_connection()->prepare($query);
 
+        $stm -> execute([":identificador" => $id]);
+        return $stm-> fetch(\PDO::FETCH_ASSOC);
+    }
+
+    public function show($id, $edit) {
+        $coder = $this -> get_one_person($id);       
+        require('../app/views/view_create_coder.php');
+    }
+
+
+    public function delete($id){
+        
+        $query = "DELETE FROM persona WHERE identificador=:identificador";
+        
+        $stm = $this->connection -> get_connection()->prepare($query);
+
+        $result = $stm -> execute([":identificador" => $id]);
+        
+        if($result){
+            header("Location:/proyectos/coderflow/public/coders");
+            exit;
+        } else {
+            echo "No se pudo eliminar el registro con id: $id";
+            }
+
+    }
+
+    public function update($data,$id) {
+
+        $query= "UPDATE persona SET edad=?, nombre=?, apellidos=? WHERE identificador=?";
+        $stm = $this->connection -> get_connection()->prepare($query);
+        $result=$stm->execute([
+                        $data['edad'],
+                        $data['nombre'],
+                        $data['apellidos'],$id
+                                ]);
+        header("Location:/proyectos/coderflow/public/coders");
+
+    }
 }
