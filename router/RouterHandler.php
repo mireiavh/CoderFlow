@@ -14,11 +14,13 @@ class RouterHandler{
     }
 
     public function route($controller, $id){
+        echo "Method: {$this->method}<br>"; // Depuración: Imprime el método
+        echo "ID: $id<br>"; // Depuración: Imprime el ID
         $resource = new $controller;
         
         switch($this -> method){
             case "get":
-                if($id && $id == "create")
+                if($id && $id == "form")
                     $resource -> create();
                 else if($id)
                     $resource -> show($id);
@@ -35,3 +37,5 @@ class RouterHandler{
     }
 
     }
+
+    

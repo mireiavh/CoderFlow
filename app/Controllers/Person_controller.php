@@ -77,5 +77,33 @@ class Person_controller{
         return $stm-> fetchAll(\PDO::FETCH_ASSOC);
     }
 
+    /*public function delete($id){
+        $query = "DELETE FROM person WHERE id=:id";
+        $stm = $this->connection->get_connection()->prepare($query);
+        $result = $stm->execute([":id" => $id]);
+        var_dump($stm->errorInfo());
 
+        if($result){
+            //echo "El registro con el ID $id fue eliminado exitosamente";
+            header("Location:coders");
+        }else{
+            echo "registro no existe";
+        }
+
+
+    }*/
+    public function delete($id) {
+        // Reemplaza 'get_connection()' por tu forma de obtener la conexión a la base de datos
+        $query = "DELETE FROM person WHERE id=:id";
+        $stm = $this->connection->prepare($query);
+        $result = $stm->execute([":id" => $id]);
+
+        if ($result) {
+            // Redirige de manera adecuada después de la eliminación
+            header("Location: /coderflow/public/coders");
+            exit(); // Importante: asegúrate de salir para evitar que se siga ejecutando el código
+        } else {
+            echo "Error al eliminar el registro";
+        }
+    }
 }
