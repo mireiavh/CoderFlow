@@ -15,7 +15,7 @@
                     <span><?= $result["apellidos"]?></span>
                     <span><?= $result["localidad"]?></span>
                     <span><?= $result["estado"]?></span>
-                    <a href="/proyectos/coderflow/public/coders/<?=$result["identificador"]?>"><button>Ver Coder</button></a>
+                    <a href="/proyectos/coderflow/public/coders/show/<?=$result["identificador"]?>"><button>Ver Coder</button></a>
                     
                 </li>
             <?php endforeach;?>

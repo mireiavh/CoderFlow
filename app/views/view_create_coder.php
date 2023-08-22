@@ -1,10 +1,3 @@
-<?php
-
-//include_once('../../database/Database_connection.php');
-//include_once('../Controllers/Personas_controller.php');
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,38 +27,26 @@
 
     <br><br>
 
-     <!--botón-->
     <a href = "/proyectos/coderflow/public/coders"><button>Volver</button></a>
     <br><br>
 
+    <?php if ($coder && !$edit):?>    
+    <a href="/proyectos/coderflow/public/coders/edit/<?=$coder['identificador']?>" >           
+        <button>Modificar</button>
+    </a>
     
-        
-        <?php if ($coder && !$edit):?>
-            
-            
-            <form action="/proyectos/coderflow/public/coders/<?=$coder['identificador']?>" method="post">
-                <input type="hidden" name="method" value="edit">
-           
-                <button type="submit">Modificar</button>
-           </form>
-            
-            <form action="/proyectos/coderflow/public/coders/<?=$coder['identificador']?>" method="post">
-                    <input type="hidden" name="method" value="delete">
-                    <button type="submit">Eliminar</button>
-            </form>
-        <?php endif; ?>
+    <a href="/proyectos/coderflow/public/coders/delete/<?=$coder['identificador']?>" >
+        <button>Eliminar</button>
+    </a>
+    <?php endif; ?>
 
-        <form action="/proyectos/coderflow/public/coders<?= $coder? '/'.$coder['identificador']:'' ?>" method="POST">
-            <input type="hidden" name="method" value="post"> 
-
-         
-        <?php if($coder && $edit):?>
-            <button type="submit">Guardar cambios</button>
-        <?php elseif($edit): ?>
-             <?= $coder? '/'.$coder['identificador']:'' ?>
-            <button type="submit">Guardar</button>
-        <?php endif; ?>
-
+    <form action="/proyectos/coderflow/public/coders<?= $coder? '/update/'.$coder['identificador']:'/create' ?>" method="POST">
+      
+    <?php if($coder && $edit):?>
+        <button type="submit">Guardar cambios</button>
+    <?php elseif($edit): ?>
+        <button type="submit">Guardar</button>
+    <?php endif; ?>
 
         <br><br>
         <section>
@@ -101,24 +82,24 @@
 
         <section>
 
-        <label for="dni_nie">DNI/NIE</label>
-        <input <?=$edit? '' : 'disabled'?> type="text" name="DNI" value=""><br><br>
+            <label for="dni_nie">DNI/NIE</label>
+            <input <?=$edit? '' : 'disabled'?> type="text" name="DNI" value=""><br><br>
 
-        <label for="email">eMail</label>
-        <input <?=$edit? '' : 'disabled'?> type="text" name="email" value=<?= $coder? $coder['email']:""?> ><br><br>
+            <label for="email">eMail</label>
+            <input <?=$edit? '' : 'disabled'?> type="text" name="email" value=<?= $coder? $coder['email']:""?> ><br><br>
 
-        <label for="city">Localidad</label>
-        <input <?=$edit? '' : 'disabled'?> type="text" name="localidad" value=<?= $coder? $coder['localidad']:""?>><br><br>
+            <label for="city">Localidad</label>
+            <input <?=$edit? '' : 'disabled'?> type="text" name="localidad" value=<?= $coder? $coder['localidad']:""?>><br><br>
 
-        <label for="region">Provincia</label>
-        <input <?=$edit? '' : 'disabled'?> type="text" name="provincia" value=<?= $coder? $coder['provincia']:""?>><br><br>
+            <label for="region">Provincia</label>
+            <input <?=$edit? '' : 'disabled'?> type="text" name="provincia" value=<?= $coder? $coder['provincia']:""?>><br><br>
 
-        <label for="number_phone">Teléfono</label>
-        <input <?=$edit? '' : 'disabled'?> type="text" name="telefono" value=<?= $coder? $coder['telefono']:""?>><br><br>
+            <label for="number_phone">Teléfono</label>
+            <input <?=$edit? '' : 'disabled'?> type="text" name="telefono" value=<?= $coder? $coder['telefono']:""?>><br><br>
 
-        <label for="status">Estado</label>
-        <input <?=$edit? '' : 'disabled'?> type="text" name="estado" value=<?= $coder? $coder['estado']:""?>><br><br>        
-       
+            <label for="status">Estado</label>
+            <input <?=$edit? '' : 'disabled'?> type="text" name="estado" value=<?= $coder? $coder['estado']:""?>><br><br>        
+        
         </section>
     </form>
 </body>

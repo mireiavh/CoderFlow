@@ -13,13 +13,11 @@ class Person_controller{
     
     public function __construct()
     {
-        // Definir datos de conexión
         $this -> server = "localhost";
         $this -> username = "root";
         $this -> password = "";
         $this -> database = "coder_flow";
 
-        // Conectar a DB
         $this -> connection = new Database_connection($this->server, $this->username, $this->password,$this->database); 
         $this-> connection -> connect();
     }
@@ -31,7 +29,6 @@ class Person_controller{
 
     public function create(){
         $edit = true;
-       // $coder['edad'] = 23;
         $coder = null;
         require("../app/views/view_create_coder.php");  
     }
@@ -61,10 +58,10 @@ class Person_controller{
                 $response = "Registro realizado exitosamente";
                 echo $response;
                 return $response;
-                //return[$statusCode, $response, $results];
+                
             }
         }catch (Exception $e) {
-            return("Error al registrar");//posibilidad de echo
+            return("Error al registrar");
         }  
     }
     
@@ -121,4 +118,5 @@ class Person_controller{
         header("Location:/proyectos/coderflow/public/coders");
 
     }
+
 }
