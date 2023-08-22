@@ -1,10 +1,3 @@
-<?php
-
-//include_once('../../database/Database_connection.php');
-//include_once('../Controllers/Personas_controller.php');
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
