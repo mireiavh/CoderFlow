@@ -13,23 +13,40 @@ class RouterHandler{
         $this -> data = $data;
     }
 
-    public function route($controller, $id){
-        $resource = new $controller;
-        
+    public function route($controller, $action, $id){
+        $resource_controller = new $controller;
         switch($this -> method){
-            case "get":
-                if($id && $id == "create")
-                    $resource -> create();
-                else if($id)
-                    $resource -> show($id);
-                else
-                    $resource -> index();
+            case "GET":
+                switch($action){
+                    case 'create':
+                        $resource_controller -> create();
+                        break;
+                    case 'show':
+                        $resource_controller -> show($id, false);
+                        break;
+                    case "edit":
+                        $resource_controller -> show($id, true);
+                        break;
+                    case 'delete':
+                        $resource_controller -> delete($id);
+                        break;
+                    default:
+                        $resource_controller -> index();
+                        break;
+                }
                 break;
-            case "post":
-                $resource -> store($this->data);
-                break;
-            case "delete":
-                $resource -> delete($id);
+            case "POST":
+                switch($action){
+                    case 'create':
+                        $resource_controller -> store($this->data);
+                        break;
+                    case 'update':
+                        $resource_controller -> update($this->data, $id);
+                        break;
+                    default:
+                        $resource_controller -> index();
+                        break;
+                }                  
                 break;
             }
     }
