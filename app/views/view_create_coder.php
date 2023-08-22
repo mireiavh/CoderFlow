@@ -91,8 +91,8 @@
             <label for="city">Localidad</label>
             <input <?=$edit? '' : 'disabled'?> type="text" name="localidad" value=<?= $coder? $coder['localidad']:""?>><br><br>
 
-            <label for="region">Provincia</label>
-            <input <?=$edit? '' : 'disabled'?> type="text" name="provincia" value=<?= $coder? $coder['provincia']:""?>><br><br>
+            <label for="region">Comunidad Autonoma</label>
+            <input <?=$edit? '' : 'disabled'?> type="text" name="comunidad_autonoma" value=<?= $coder? $coder['comunidad_autonoma']:""?>><br><br>
 
             <label for="number_phone">Teléfono</label>
             <input <?=$edit? '' : 'disabled'?> type="text" name="telefono" value=<?= $coder? $coder['telefono']:""?>><br><br>

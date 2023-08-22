@@ -36,7 +36,7 @@ class Person_controller{
     public function store($data){
         $query = "INSERT
                   INTO persona (edad, nombre, apellidos, genero, certificado_discapacidad, 
-                                DNI, email, localidad, provincia, telefono, estado)
+                                DNI, email, localidad, comunidad_autonoma, telefono, estado)
                     VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         $stm = $this->connection -> get_connection()->prepare($query);
         $results = $stm->execute([$data['edad'],
@@ -47,7 +47,7 @@ class Person_controller{
                                 $data['DNI'],
                                 $data['email'],
                                 $data['localidad'],
-                                $data['provincia'],
+                                $data['comunidad_autonoma'],
                                 $data['telefono'],
                                 $data['estado']
                                 ]);
