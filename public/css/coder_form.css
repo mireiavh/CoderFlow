@@ -78,7 +78,7 @@ nav h1 {
 .input_form {
     background-color: white;
     height: 35px;
-    width: 400px;
+    width: 300px;
     margin-left: 70px;
     padding-inline-start: 15px;
 
@@ -158,3 +158,4 @@ label {
 
     margin: 10px;
 }
+

@@ -17,7 +17,6 @@ nav {
     width: 500px;
     border-radius: 30px 0 0 0;
     position: relative;
-    /*opacity: 0.7;*/
     transition: all 0.3s ease;
     padding: 0 15px;
     white-space: nowrap; /* Evita el salto de línea */    
@@ -42,6 +41,7 @@ nav {
     margin-left: -130px; /* Ajusta este valor para superponer las pestañas */
   }
   
+  /*
   .nav_tab_1:hover {
     border-radius: 30px 30px 0 0;
     z-index: 3;
@@ -61,3 +61,4 @@ nav {
     margin-left: -130px;
     opacity: 1;
   }
+  */

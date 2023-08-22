@@ -18,9 +18,9 @@
 <header>
     <nav>
         <div class="nav_container">
-        <div class="nav_tab nav_tab_1">Pestaña 1</div>
-        <div class="nav_tab nav_tab_2">Pestaña 2</div>
-        <div class="nav_tab nav_tab_3">Pestaña 3</div>
+        <div class="nav_tab nav_tab_1"></div>
+        <div class="nav_tab nav_tab_2"></div>
+        <div class="nav_tab nav_tab_3">Información de Coder</div>
             </div> 
         </div>
     </nav>
