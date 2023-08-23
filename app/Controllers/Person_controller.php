@@ -37,7 +37,7 @@ class Person_controller{
         $query = "INSERT
                   INTO persona (edad, nombre, apellidos, genero, certificado_discapacidad, 
                                 DNI, email, localidad, comunidad_autonoma, telefono, estado)
-                    VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                    VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )";
         $stm = $this->connection -> get_connection()->prepare($query);
         $results = $stm->execute([$data['edad'],
                                 $data['nombre'],
@@ -108,13 +108,22 @@ class Person_controller{
 
     public function update($data,$id) {
 
-        $query= "UPDATE persona SET edad=?, nombre=?, apellidos=? WHERE identificador=?";
+        $query= "UPDATE persona SET edad=?, nombre=?, apellidos=?, genero=?, certificado_discapacidad=?, DNI=?, 
+                        email=?, localidad=?, comunidad_autonoma=?, telefono=?, estado=? WHERE identificador=?";
         $stm = $this->connection -> get_connection()->prepare($query);
         $result=$stm->execute([
                         $data['edad'],
                         $data['nombre'],
-                        $data['apellidos'],$id
-                                ]);
+                        $data['apellidos'],
+                        $data['genero'],
+                        $data['certificado_discapacidad'],
+                        $data['DNI'],
+                        $data['email'],
+                        $data['localidad'],
+                        $data['comunidad_autonoma'],
+                        $data['telefono'],
+                        $data['estado'],$id
+                        ]);
         header("Location:/proyectos/coderflow/public/coders");
 
     }
