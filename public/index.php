@@ -1,6 +1,7 @@
 <?php
 
 use App\Controllers\Person_controller;
+use App\Controllers\Promo_controller;
 use Router\RouterHandler;
 
 require __DIR__ . '/../vendor/autoload.php';
@@ -24,6 +25,12 @@ switch($resource){
         $router -> set_method($method);
         $router -> set_data($_POST);
         $router -> route(Person_controller::class, $action, $id);
+        break;
+    case "promos":      
+        $method = $_SERVER['REQUEST_METHOD'];
+        $router -> set_method($method);
+        $router -> set_data($_POST);
+        $router -> route(Promo_controller::class, $action, $id);
         break;
     default:
         echo "404 Not Found";
