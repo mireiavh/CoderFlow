@@ -52,7 +52,7 @@ nav h1 {
 
 
 .btn_1 {
-    background-color: #75E1B1;
+    background-color: #59C192;
     height: 40px;
     width: 100px;
 
@@ -66,13 +66,13 @@ nav h1 {
 .btn_2 {
     background-color: #FF5819;
     height: 40px;
-    width: 150px;
+    width: 200px;
 
     border-radius: 15px;
     border-style: none;
 
     color: white;
-    font-size: x-large;
+    font-size: large;
 }
 
 .input_form {

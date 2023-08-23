@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="../../public/css/welcome_panel.css" rel="stylesheet">
-    <link href="../../public/css/folders_welcome_panel.css" rel="stylesheet">
+    <link href="../../public/css/welcome_page.css" rel="stylesheet">
+    <link href="../../public/css/folder_welcome_panel.css" rel="stylesheet">
     <title>CoderFlow_</title>
 </head>
 

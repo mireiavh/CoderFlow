@@ -28,22 +28,32 @@ class Person_controller{
     }
 
     public function create(){
-        $edit = true;
-        $coder = null;
+        $edit=true;
+        $coder=null;
+        $promos = $this -> get_promos();
         require("../app/views/view_create_coder.php");  
+    }
+
+    public function get_promos() {
+        
+        $query = "SELECT * FROM promo";
+        $stm = $this->connection -> get_connection()->prepare($query);
+        $stm -> execute();
+        return $stm-> fetchAll(\PDO::FETCH_ASSOC);
     }
 
     public function store($data){
         $query = "INSERT
-                  INTO persona (edad, nombre, apellidos, genero, certificado_discapacidad, 
+                  INTO persona (edad, nombre, apellidos, genero, certificado_discapacidad, promo_id, 
                                 DNI, email, localidad, comunidad_autonoma, telefono, estado)
-                    VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )";
+                    VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )";
         $stm = $this->connection -> get_connection()->prepare($query);
         $results = $stm->execute([$data['edad'],
                                 $data['nombre'],
                                 $data['apellidos'],
                                 $data['genero'],
                                 $data['certificado_discapacidad'],
+                                $data['promo_id'],
                                 $data['DNI'],
                                 $data['email'],
                                 $data['localidad'],
@@ -84,7 +94,8 @@ class Person_controller{
     }
 
     public function show($id, $edit) {
-        $coder = $this -> get_one_person($id);       
+        $coder = $this -> get_one_person($id); 
+        $promos = $this -> get_promos();      
         require('../app/views/view_create_coder.php');
     }
 
@@ -108,7 +119,7 @@ class Person_controller{
 
     public function update($data,$id) {
 
-        $query= "UPDATE persona SET edad=?, nombre=?, apellidos=?, genero=?, certificado_discapacidad=?, DNI=?, 
+        $query= "UPDATE persona SET edad=?, nombre=?, apellidos=?, genero=?, certificado_discapacidad=?, promo_id=?, DNI=?, 
                         email=?, localidad=?, comunidad_autonoma=?, telefono=?, estado=? WHERE identificador=?";
         $stm = $this->connection -> get_connection()->prepare($query);
         $result=$stm->execute([
@@ -117,6 +128,7 @@ class Person_controller{
                         $data['apellidos'],
                         $data['genero'],
                         $data['certificado_discapacidad'],
+                        $data['promo_id'],
                         $data['DNI'],
                         $data['email'],
                         $data['localidad'],

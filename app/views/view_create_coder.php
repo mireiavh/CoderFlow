@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="/proyectos/CoderFlow/public/css/coder_form.css" rel="stylesheet">
-    <link href="/proyectos/CoderFlow/public/css/folders_panel.css" rel="stylesheet">
+    <link href="/proyectos/CoderFlow/public/css/create_coder.css" rel="stylesheet">
+    <link href="/proyectos/CoderFlow/public/css/folder_panel.css" rel="stylesheet">
     <title>CoderFlow_</title>
 </head>
 
@@ -75,12 +75,12 @@
 
                     <section class="group_container">
                         <label class="name_label">Género</label>
-                        <select <?=$edit? '' : 'disabled'?> name="genero" class="short_form">
-                            <option <?= $coder && $coder['genero']== 0? 'selected':''?>value="0"></option>
-                            <option <?= $coder && $coder['genero']== 1? 'selected':''?>value="1">Mujer</option>
-                            <option <?= $coder && $coder['genero']== 2? 'selected':''?>value="2">Hombre</option>
-                            <option <?= $coder && $coder['genero']== 3? 'selected':''?>value="3">Otros</option>
-                            <option <?= $coder && $coder['genero']== 4? 'selected':''?>value="4">Sin Especificar</option>
+                        <select <?=$edit? '' : 'disabled'?> name="genero" class="input_form">
+                            <option <?= $coder && $coder['genero']== 0? 'selected':''?> value="0"></option>
+                            <option <?= $coder && $coder['genero']== 1? 'selected':''?> value="1">Mujer</option>
+                            <option <?= $coder && $coder['genero']== 2? 'selected':''?> value="2">Hombre</option>
+                            <option <?= $coder && $coder['genero']== 3? 'selected':''?> value="3">Otros</option>
+                            <option <?= $coder && $coder['genero']== 4? 'selected':''?> value="4">Sin Especificar</option>
                         </select>
                         <br><br>
 
@@ -95,6 +95,16 @@
 
                     <label for="documents" class="name_label">Documentos</label>
                     <input <?=$edit? '' : 'disabled'?> type="text" name="documentos" class="input_form" value=""><br><br>
+
+                    <label for="promos" class="name_label">Bootcamp</label>
+                    <select <?=$edit? '' : 'disabled'?> name="promo_id" class="input_form">
+                            <option <?= $coder && $coder['promo_id']== 0? 'selected':''?> value="0"></option>
+                            <?php foreach($promos as $promo): ?>
+                                <option <?= $coder && $coder['promo_id']==$promo['identificador'] ? 'selected':''?> value=<?=$promo['identificador']?>><?=$promo['nombre_promo']?></option>
+                            <?php endforeach;?>
+                        </select><br><br>
+
+
 
                 </section>
 
@@ -132,6 +142,5 @@
     </section>
 
 </body>
-
 
 </html>
