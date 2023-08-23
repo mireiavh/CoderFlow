@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/proyectos/CoderFlow/public/css/coders_list.css" rel="stylesheet">
     <title>Lista de Coders</title>
 </head>
 <body>
     <a href="/proyectos/coderflow/public/coders/create"><button>Crear coder</button></a>
     <h2>Lista de Coders</h2>
-        <ul>
+        <ul class="ul">
             <?php foreach($results as $result): ?>
-                <li>
+                <li class ="li">
                     <span><?= $result["nombre"]?></span>
                     <span><?= $result["apellidos"]?></span>
                     <span><?= $result["localidad"]?></span>

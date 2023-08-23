@@ -37,9 +37,7 @@ class Person_controller{
     public function get_promos() {
         
         $query = "SELECT * FROM promo";
-
         $stm = $this->connection -> get_connection()->prepare($query);
-
         $stm -> execute();
         return $stm-> fetchAll(\PDO::FETCH_ASSOC);
     }
