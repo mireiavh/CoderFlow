@@ -24,6 +24,7 @@ class Person_controller{
 
     public function index(){
         $results = $this -> get_personas();
+        $promo=null;
         require('../app/views/view_coders_list.php');
     }
 
