@@ -96,6 +96,16 @@
                     <label for="documents" class="name_label">Documentos</label>
                     <input <?=$edit? '' : 'disabled'?> type="text" name="documentos" class="input_form" value=""><br><br>
 
+                    <label for="promos" class="name_label">Bootcamp</label>
+                    <select <?=$edit? '' : 'disabled'?> name="promo_id" class="short_form">
+                            <option <?= $coder && $coder['promo_id']== 0? 'selected':''?> value="0"></option>
+                            <?php foreach($promos as $promo): ?>
+                                <option <?= $coder && $coder['promo_id']==$promo['identificador'] ? 'selected':''?> value=<?=$promo['identificador']?>><?=$promo['nombre_promo']?></option>
+                            <?php endforeach;?>
+                        </select><br><br>
+
+
+
                 </section>
 
                 <section class="input_container_2">
@@ -132,6 +142,5 @@
     </section>
 
 </body>
-
 
 </html>
