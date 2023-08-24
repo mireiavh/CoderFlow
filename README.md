@@ -43,13 +43,7 @@ Seguir las siguientes instrucciones para crear una copia del proyecto y ejecutar
 
 ## Autoras
 
-- [@nati-Bel](https://github.com/nati-Bel)
-- [@mireiavh] (https://github.com/mireiavh)
-- [@BeatrizCano] (https://github.com/BeatrizCano)
-- [@LilinaG] (https://github.com/LilinaG)
-
-
-[<img src="https://avatars.githubusercontent.com/u/130498392?v=4" width=115><br><sub>Beatriz Cano</sub>](https://github.com/BeatrizCano) | [<img src="https://avatars.githubusercontent.com/u/132447078?v=4" width=115><br><sub>Nataliza Belzarova</sub>](https://github.com/nati-Bel) |  [<img src="https://avatars.githubusercontent.com/u/132447078?v=4" width=115><br><sub>Mireia Vazquez</sub>](https://github.com/nati-Bel) | [<img src="https://avatars.githubusercontent.com/u/132447078?v=4" width=115><br><sub>Mireia Vazquez</sub>](https://github.com/nati-Bel)
+[<img src="https://avatars.githubusercontent.com/u/130498392?v=4" width=115><br><sub>Beatriz Cano</sub>](https://github.com/BeatrizCano) | [<img src="https://avatars.githubusercontent.com/u/132447078?v=4" width=115><br><sub>Nataliza Belzarova</sub>](https://github.com/nati-Bel) |  [<img src="https://avatars.githubusercontent.com/u/132447061?v=4" width=115><br><sub>Mireia Vazquez</sub>](https://github.com/mireiavh) | [<img src="https://avatars.githubusercontent.com/u/132386229?v=4" width=115><br><sub>Liliana Gutiérrez</sub>](https://github.com/LilinaG) | :---: | :---: | :---: |
 
 
 
