@@ -45,7 +45,8 @@ class Promo_controller{
                                 $data['formador'],
                                 $data['coformador'],
                                 $data['rp'],
-                                ]);
+    ]);
+
         header("Location:promos");
         try{
             if(!empty($results)) {
@@ -119,4 +120,19 @@ class Promo_controller{
 
     }
 
+    public function filter($id){
+        //$promo -> get_one_promo($id);
+        $results = $this -> get_filtered_person($id);
+        $promo = $this -> get_one_promo($id);
+        require('../app/views/view_coders_list.php');
+    }
+
+    public function get_filtered_person($id){
+        $query = "SELECT * FROM persona WHERE promo_id=:identificador";
+        
+        $stm = $this->connection -> get_connection()-> prepare($query);
+        $stm -> execute([":identificador" => $id]);
+        return $stm-> fetchAll(\PDO::FETCH_ASSOC);
+
+    }
 }

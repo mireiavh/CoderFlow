@@ -8,9 +8,12 @@
 </head>
 <body>
     <a href="/proyectos/coderflow/public/coders/create"><button>Crear coder</button></a>
-    <h2>Lista de Coders</h2>
+    <a href="/proyectos/coderflow/public/promos"><button>Ver bootcams</button></a>
+
+    <h2>Lista de Coders<?= $promo? ' ' .$promo['nombre_promo'] : '' ?></h2>
         <ul class="ul">
             <?php foreach($results as $result): ?>
+                
                 <li class ="li">
                     <span><?= $result["nombre"]?></span>
                     <span><?= $result["apellidos"]?></span>

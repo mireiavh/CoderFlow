@@ -30,6 +30,8 @@ class RouterHandler{
                     case 'delete':
                         $resource_controller -> delete($id);
                         break;
+                    case 'filter':
+                        $resource_controller -> filter($id);
                     default:
                         $resource_controller -> index();
                         break;

@@ -7,6 +7,7 @@
 </head>
 <body>
     <a href="/proyectos/coderflow/public/promos/create"><button>Crear promoción</button></a>
+    <a href="/proyectos/coderflow/public/coders"><button>Ver todos coders</button></a>
     <h2>Lista de Promociones</h2>
         <ul>
             <?php foreach($results as $result): ?>
@@ -18,7 +19,9 @@
                     <span><?= $result["formador"]?></span>
                     <span><?= $result["coformador"]?></span>
                     <span><?= $result["rp"]?></span>
-                    <a href="/proyectos/coderflow/public/promos/show/<?=$result["identificador"]?>"><button>Ver Promoción</button></a>                    
+                    <a href="/proyectos/coderflow/public/promos/show/<?=$result["identificador"]?>"><button>Ver Promoción</button></a>
+                    <a href="/proyectos/coderflow/public/promos/filter/<?=$result["identificador"]?>"><button>Ver Coders</button></a>
+
                 </li>
             <?php endforeach;?>
         </ul>
