@@ -9,7 +9,7 @@ nav {
   .nav_container {
     display: flex;
     position: relative;
-    overflow: hidden; /* Evita que las pestañas se desborden */
+    overflow: hidden; 
   }
   
   .nav_tab {
@@ -19,7 +19,7 @@ nav {
     position: relative;
     transition: all 0.3s ease;
     padding: 0 15px;
-    white-space: nowrap; /* Evita el salto de línea */    
+    white-space: nowrap;     
     display: flex;
     align-items: center;
     justify-content: center;
@@ -32,7 +32,7 @@ nav {
   .nav_tab_2 {
     background-color: #A8F3D8;
     z-index: 2;
-    margin-left: -100px; /* Ajusta este valor para superponer las pestañas */
+    margin-left: -100px; 
   }
   
   .nav_tab_3 {
