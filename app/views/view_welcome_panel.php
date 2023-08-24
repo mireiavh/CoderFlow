@@ -30,7 +30,8 @@
             <div class="folder_container" ></div>
             <div class="body_container_2" >
                 <div>
-                    <input type="submit" value="Entra" class="btn_start">
+                    <a href="/proyectos/coderflow/public/coders"><button class="btn_start">CODERS</button></a>
+                    <a href="/proyectos/coderflow/public/promos"><button class="btn_start">BOOTCAMPS</button></a>
                 </div>
             </div>
 
